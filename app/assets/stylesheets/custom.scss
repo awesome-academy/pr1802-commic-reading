@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$gray-medium-light: #eaeaea;
+.navbar {
+  background-image: url("bg6.jpg");
+  height: 110px;
+  padding-top: 20px;
+}
+footer {
+  padding-top: 20px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  text-align: center;
+  }
+.content {
+  margin: 110px 100px 0px 100px;
+  height: 1000px;
+  background: #EEEEEE;
+  text-align: center;
+}
+
