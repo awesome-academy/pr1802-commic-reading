@@ -1,0 +1,4 @@
+<li id='category-<%= category.id %>'>
+  <span><%= link_to category.name %></span>
+  | <%= link_to 'delete', category, method: :delete, data: { confirm: 'You sure?' } %>
+</li>
