@@ -1,0 +1,5 @@
+<li id='author-<%= author.id %>'>
+  <span><%= link_to author.name, author %></span>
+  | <%= link_to 'edit', edit_author_path(author) %>
+  | <%= link_to 'delete', author, method: :delete, data: { confirm: 'You sure?' } %>
+</li>

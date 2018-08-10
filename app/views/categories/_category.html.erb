@@ -1,4 +1,5 @@
 <li id='category-<%= category.id %>'>
-  <span><%= link_to category.name %></span>
+  <span><%= link_to category.name, category %></span>
+  | <%= link_to 'edit', edit_category_path(category) %>
   | <%= link_to 'delete', category, method: :delete, data: { confirm: 'You sure?' } %>
 </li>
