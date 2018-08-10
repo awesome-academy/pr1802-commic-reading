@@ -1,0 +1,12 @@
+<%= form_for(@comic) do |f| %>
+  <div class='field'>
+    <%= f.text_field :title, placeholder: 'Compose new title...' %>
+  </div>
+  <div class='field'>
+    <%= f.text_area :content, placeholder: 'Compose new content...' %>
+  </div>
+  <div class='field'>
+  <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+  </div>
+  <%= f.submit 'Post', class: 'btn btn-primary' %>
+<% end %>

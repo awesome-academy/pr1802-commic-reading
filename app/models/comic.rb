@@ -10,4 +10,5 @@ class Comic < ApplicationRecord
   validates :user_id, presence: true
   validates :title, presence: true
   validates :content, presence: true
+  validates :author_id, presence: true
 end

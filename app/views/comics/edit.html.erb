@@ -1,0 +1,6 @@
+<% provide(:title, 'Edit comic') %>
+
+<h1>Editing Comic</h1>
+<%= render 'shared/comic_form', comict: @comic %>
+<%= link_to 'Show', @comic %> |
+<%= link_to 'Back', comics_path %>

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
-  has_many :comics
+  has_many :comics, dependent: :destroy
   has_many :follows
   has_many :comments
   has_many :chapters
