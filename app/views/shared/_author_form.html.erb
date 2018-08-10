@@ -1,0 +1,6 @@
+<%= form_for @author do |f| %>
+  <div class='field'>
+    <%= f.text_area :name, placeholder: 'Create new author...' %>
+  </div>
+  <%= f.submit 'Create', class: 'btn btn-primary' %>
+<% end %>

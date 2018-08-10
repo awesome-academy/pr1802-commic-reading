@@ -1,2 +1,6 @@
-<% provide(:title, @category.name) %>
+<% provide :title, @category.name %>
 <h1><%= @category.name%></h1>
+
+<ul>
+  <%= render @comics %>
+</ul>
