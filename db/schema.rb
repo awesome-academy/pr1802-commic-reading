@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180807163134) do
+ActiveRecord::Schema.define(version: 20180812162605) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180807163134) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
     t.index ["author_id"], name: "index_comics_on_author_id"
     t.index ["user_id"], name: "index_comics_on_user_id"
   end

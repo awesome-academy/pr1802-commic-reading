@@ -1,4 +1,5 @@
-<% provide(:title, @comic.user.name) %>
+<% provide :title, @comic.title %>
+<h1><%= @comic.title %></h1>
 
 <li id='comic-<%= @comic.id %>'>
   <div class='user'><%= link_to @comic.user.name, @comic.user %></div>
