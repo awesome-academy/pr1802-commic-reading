@@ -8,5 +8,8 @@
   <div class='field'>
   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
   </div>
+  <span class="picture">
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
   <%= f.submit 'Post', class: 'btn btn-primary' %>
 <% end %>
