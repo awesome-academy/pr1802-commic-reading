@@ -1,0 +1,13 @@
+<div class='stats'>
+  <strong id='follows' class='stat'>
+    <%= @comic.follows.count %>
+  </strong>
+  <%= t '.followers' %>
+</div>
+<div>
+  <% if logged_in? %>
+    <%= render 'follow_form' %>
+  <% else %>
+    <%= link_to t('.log_in'), login_path %>
+  <% end %>
+</div>

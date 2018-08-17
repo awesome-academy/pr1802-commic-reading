@@ -1,30 +1,30 @@
 en: 
   authors:
     create:
-      author_created: 'Author created!'
-      author_fail: 'Fail to create author'
+      success: 'Author created!'
+      fail: 'Fail to create author'
     update:
-      author_updated: 'Author updated'
+      success: 'Author updated'
     destroy:
-      author_deleted: 'Author deleted'
+      success: 'Author deleted'
 
   categories:
     create:
-      category_created: 'Category created!'
-      category_fail: 'Fail to create category'
+      success: 'Category created!'
+      fail: 'Fail to create category'
     update:
-      category_updated: 'Category updated'
+      success: 'Category updated'
     destroy:
-      category_deleted: 'Category deleted'
+      success: 'Category deleted'
 
   comics:
     create:
-      comic_created: 'Comic created!'
-      comic_fail: 'Fail to create comic'
+      success: 'Comic created!'
+      fail: 'Fail to create comic'
     update:
-      comic_updated: 'Comic updated'
+      success: 'Comic updated'
     destroy:
-      comic_deleted: 'Comic deleted'
+      success: 'Comic deleted'
 
   sessions:
     invalid_email: 'Invalid email/password combination'

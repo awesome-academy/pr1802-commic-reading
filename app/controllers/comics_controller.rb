@@ -21,10 +21,10 @@ class ComicsController < ApplicationController
   def create
     @comic = current_user.comics.new comic_params
     if @comic.save
-      flash[:success] = t '.comic_created'
+      flash[:success] = t '.success'
       redirect_to comics_path
     else
-      flash[:danger] = t '.comic_fail'
+      flash[:danger] = t '.fail'
       redirect_to comics_path
     end
   end
@@ -36,7 +36,7 @@ class ComicsController < ApplicationController
   def update
     @comic = Comic.find params[:id]
     if @comic.update_attributes comic_params
-      flash[:success] = t '.comic_updated'
+      flash[:success] = t '.success'
       redirect_to comics_path
     else
       render :edit
@@ -46,7 +46,7 @@ class ComicsController < ApplicationController
   def destroy
     @comic = Comic.find params[:id]
     @comic.destroy
-    flash[:success] = t '.comic_deleted'
+    flash[:success] = t '.success'
     redirect_to comics_path
   end
 

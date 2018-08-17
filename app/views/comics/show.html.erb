@@ -8,4 +8,5 @@
   <div class='author'><%= link_to @comic.author.name, @comic.author %></div>
   <%= link_to t('.delete'), @comic, method: :delete, data: { confirm: t('.sure') } %> |
   <%= link_to t('.edit'), edit_comic_path(@comic) %>
+  <%= render 'shared/comic_stats' %>
 </li>

@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :comics, dependent: :destroy
-  has_many :follows
+  has_many :follows, dependent: :destroy
+  has_many :followed_comics, through: :follows, source: :comic,
+    dependent: :destroy
   has_many :comments
   has_many :chapters
   has_many :rates
@@ -35,6 +37,18 @@ class User < ApplicationRecord
   end
 
   def forget
-    update_attribute(:remember_digest, nil)
+    update_attribute :remember_digest, nil
+  end
+
+  def follow comic
+    follows.create(comic_id: comic.id)
+  end
+
+  def unfollow comic
+    follows.find_by(comic_id: comic.id).destroy
+  end
+
+  def following? comic
+    comic.followers.find_by(id: id).present?
   end
 end

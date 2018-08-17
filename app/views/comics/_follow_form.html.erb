@@ -1,0 +1,5 @@
+<% if current_user.following? @comic %>
+  <%= render 'unfollow' %>
+<% else %> 
+  <%= render 'follow' %>
+<% end %>
