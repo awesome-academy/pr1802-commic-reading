@@ -15,10 +15,10 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new author_params
     if @author.save
-      flash[:success] = 'Author created!'
+      flash[:success] = t '.author_created'
       redirect_to authors_path
     else
-      flash[:danger] = 'Fail to create author'
+      flash[:danger] = t '.author_fail'
       redirect_to authors_path
     end
   end
@@ -30,7 +30,7 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find params[:id]
     if @author.update_attributes author_params
-      flash[:success] = 'Author updated'
+      flash[:success] = t '.author_updated'
       redirect_to authors_path
     else
       render :edit
@@ -40,7 +40,7 @@ class AuthorsController < ApplicationController
   def destroy
     @author = Author.find params[:id]
     @author.destroy
-    flash[:success] = 'Author deleted'
+    flash[:success] = t '.author_deleted'
     redirect_to authors_path
   end
 

@@ -1,0 +1,4 @@
+en:
+  model:
+    comic:
+      should: 'should be less than 5MB'
