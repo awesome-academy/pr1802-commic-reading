@@ -16,10 +16,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = t '.category_created'
+      flash[:success] = t '.success'
       redirect_to categories_path
     else
-      flash[:danger] = t '.category_fail'
+      flash[:danger] = t '.fail'
       redirect_to categories_path
     end
   end
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find params[:id]
     if @category.update_attributes category_params
-      flash[:success] = t '.category_updated'
+      flash[:success] = t '.success'
       redirect_to categories_path
     else
       render :edit
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find params[:id]
     @category.destroy
-    flash[:success] = t '.category_deleted'
+    flash[:success] = t '.success'
     redirect_to categories_path
   end
 

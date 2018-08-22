@@ -2,7 +2,8 @@ class Comic < ApplicationRecord
   belongs_to :user
   mount_uploader :picture, PictureUploader
   belongs_to :author
-  has_many :follows
+  has_many :follows, dependent: :destroy
+  has_many :followers, through: :follows, source: :user, dependent: :destroy
   has_many :rates
   has_many :chapters
   has_many :comic_categories
@@ -13,11 +14,11 @@ class Comic < ApplicationRecord
   validates :content, presence: true
   validates :author_id, presence: true
   validate  :picture_size
-
+  
   private
   def picture_size
     if picture.size > 5.megabytes
-      errors.add(:picture, t('.should'))
+      errors.add :picture, I18n.t('model.comic.should')
     end
   end
 end

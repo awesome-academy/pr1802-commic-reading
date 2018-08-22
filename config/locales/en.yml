@@ -46,6 +46,10 @@ en:
       edit: 'edit'
       delete: 'delete'
       sure: 'You sure?'
+    follow:
+      follow: 'Follow'
+    unfollow:  
+      unfollow: 'Unfollow'
 
   layouts:
     footer: 
@@ -85,6 +89,11 @@ en:
       new_title: 'Compose new title...'
       new_content: 'Compose new content...'
       post: 'Post'
+    user_stats:
+      following: 'following'
+    comic_stats:
+      followers: 'followers'
+      log_in: 'Log in to follow'
 
   users:
     new:
@@ -94,6 +103,9 @@ en:
       name: 'Name'
       email: 'Email'
       password: 'Password'
+    show_follow:
+      following: 'Following'
+      view: 'View my profile'
 
   helper:
     application:
