@@ -4,6 +4,6 @@
   <div class='content-comic'><%= comic.content %></div>
   <div class='author'><%= link_to comic.author.name, comic.author %></div>
   <%= image_tag comic.picture.url if comic.picture? %>
-  <%= link_to 'Delete', comic, method: :delete, data: { confirm: 'You sure?' } %> |
-  <%= link_to 'Edit', edit_comic_path(comic) %>
+  <%= link_to t('.delete'), comic, method: :delete, data: { confirm: t('.sure') } %> |
+  <%= link_to t('.edit'), edit_comic_path(comic) %>
 </li>

@@ -1,0 +1,33 @@
+en: 
+  authors:
+    create:
+      author_created: 'Author created!'
+      author_fail: 'Fail to create author'
+    update:
+      author_updated: 'Author updated'
+    destroy:
+      author_deleted: 'Author deleted'
+
+  categories:
+    create:
+      category_created: 'Category created!'
+      category_fail: 'Fail to create category'
+    update:
+      category_updated: 'Category updated'
+    destroy:
+      category_deleted: 'Category deleted'
+
+  comics:
+    create:
+      comic_created: 'Comic created!'
+      comic_fail: 'Fail to create comic'
+    update:
+      comic_updated: 'Comic updated'
+    destroy:
+      comic_deleted: 'Comic deleted'
+
+  sessions:
+    invalid_email: 'Invalid email/password combination'
+
+  users:
+    welcome: 'Welcome to the Comics Reading!'
