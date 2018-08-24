@@ -2,9 +2,9 @@
   <div class='container'>
     <nav>
       <ul>
-        <form class='search form-inline my-2 my-lg-0'>
-        <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
-        <button class='btn btn-outline-success my-2 my-sm-0' type='submit'><%= link_to t('.search'), '#' %></button>
+        <form class="form-inline md-form form-sm">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
         </form>
       </ul>
       <ul class='nav navbar-nav navbar-left'>
@@ -14,7 +14,7 @@
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><%= t('.category') %></a>
           <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
             <% Category.all.each do |category| %>
-              <%=  link_to category.name, comics_path(category: category), class: 'dropdown-item' %>
+              <%= link_to category.name, category_comics_path(category), class: 'dropdown-item' %>
             <% end %>
           </div>
         </li>

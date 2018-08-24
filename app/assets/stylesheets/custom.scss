@@ -4,7 +4,8 @@ $gray-medium-light: #eaeaea;
 .navbar {
   background-image: url("bg6.jpg");
   height: 110px;
-  padding-top: 20px;
+  margin-top: -70px;
+  padding-top: 10px;
 }
 footer {
   padding-top: 20px;
@@ -149,4 +150,8 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+.row {
+  width: 1000px;
+  margin: 0 auto;
 }
