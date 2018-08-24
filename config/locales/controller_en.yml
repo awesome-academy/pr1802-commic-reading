@@ -31,3 +31,11 @@ en:
 
   users:
     welcome: 'Welcome to the Comics Reading!'
+
+  rates:
+    create:
+      success: 'Thanks for rating!'
+      fail: 'Rating failed!'
+    update:
+      success: 'You rated again!'
+      fail: 'Oops, rating again failed!'

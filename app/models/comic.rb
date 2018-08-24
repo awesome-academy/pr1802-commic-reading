@@ -5,6 +5,7 @@ class Comic < ApplicationRecord
   has_many :follows, dependent: :destroy
   has_many :followers, through: :follows, source: :user, dependent: :destroy
   has_many :rates
+  has_many :raters, through: :rates, source: :user, dependent: :destroy
   has_many :chapters
   has_many :comic_categories
   has_many :categories, through: :comic_categories
@@ -14,7 +15,7 @@ class Comic < ApplicationRecord
   validates :content, presence: true
   validates :author_id, presence: true
   validate  :picture_size
-  
+
   private
   def picture_size
     if picture.size > 5.megabytes

@@ -6,7 +6,17 @@
 </div>
 <div>
   <% if logged_in? %>
-    <%= render 'follow_form' %>
+    <%= render 'comics/follow_form' %>
+  <% end %>
+</div>
+<div>
+  <%= t '.rating', rate: @comic.average_ratings.to_i %>
+  <span><%= t '.count_rate', count: @comic.rates.count %></span>
+</div>
+<div>
+  <% if logged_in? %>
+    <%= current_user.rating?(@comic) ? t('.rate_again') : t('.rate') %>
+    <%= render 'comics/rate_form' %>
   <% else %>
     <%= link_to t('.log_in'), login_path %>
   <% end %>

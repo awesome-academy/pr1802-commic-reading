@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :follows, only: [:create, :destroy, :index]
   end
-  resources :comics
+  resources :comics do
+    resources :rates, only: [:create, :update]
+  end
   resources :authors
 end
