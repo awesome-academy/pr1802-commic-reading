@@ -2,11 +2,34 @@
 <h1><%= @comic.title %></h1>
 
 <li id='comic-<%= @comic.id %>'>
-  <div class='user'><%= link_to @comic.user.name, @comic.user %></div>
-  <div class='title'><%= @comic.title %></div>
-  <div class='content-comic'><%= @comic.content %></div>
-  <div class='author'><%= link_to @comic.author.name, @comic.author %></div>
-  <%= link_to t('.delete'), @comic, method: :delete, data: { confirm: t('.sure') } %> |
-  <%= link_to t('.edit'), edit_comic_path(@comic) %>
-  <%= render 'shared/comic_stats' %>
+  <div class='row'>
+    <div class='col col-md-6'>
+      <div class='picture-show'> 
+        <%= image_tag @comic.picture.url if @comic.picture? %>
+      </div>
+    </div>
+    <div class='col col-md-6'>
+      <div class='title'>
+        <%= t '.title' %>
+        <%= @comic.title %>
+      </div>
+      <div class='content-comic'>
+        <%= t '.intro' %>
+        <%= @comic.content %>
+      </div>
+      <div class='author'>
+        <%= t '.author' %>
+        <%= link_to @comic.author.name, @comic.author %>
+      </div>
+      <div class='category'>
+        <%= t '.category' %>
+        <% @comic.categories.each do |category| %>
+          <%= link_to category.name, category %> |
+        <% end %>
+      </div>
+      <%= link_to t('.delete'), @comic, method: :delete, data: { confirm: t('.sure') } %> |
+      <%= link_to t('.edit'), edit_comic_path(@comic) %>
+      <%= render 'shared/comic_stats' %>
+    </div>
+  </div>
 </li>

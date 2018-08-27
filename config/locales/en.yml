@@ -46,6 +46,10 @@ en:
       edit: 'edit'
       delete: 'delete'
       sure: 'You sure?'
+      title: 'Title:'
+      intro: 'Introduce:'
+      author: 'Author:'
+      category: 'Category:'
     follow:
       follow: 'Follow'
     unfollow:  

@@ -1,12 +1,7 @@
 class ComicsController < ApplicationController
   def index
-    @comics = if params[:category]
-      Category.find(params[:category]).comics
-    else
-      Comic.all
-    end
-    @comic = Comic.new
-    @author = @comic.author
+    @category = Category.find_by_id params[:category_id]
+    @comics = @category&.comics || Comic.all
   end
 
   def new
@@ -16,6 +11,7 @@ class ComicsController < ApplicationController
   def show
     @comic = Comic.find params[:id]
     @author = @comic.author
+    @category = @comic.category_ids
   end
 
   def create
@@ -52,6 +48,6 @@ class ComicsController < ApplicationController
 
   private
   def comic_params
-    params.require(:comic).permit :title, :content, :author_id, :picture
+    params.require(:comic).permit :title, :content, :author_id, :picture, category_ids: []
   end
 end

@@ -1,9 +1,6 @@
 <% provide :title, t('.comics') %>
 
-<h1><%= t '.comics' %></h1>
+<h1><%= @category&.name || t('.comics') %></h1>
 <ul>
   <%= render @comics %>
 </ul>
-<div class='comic_form'>
-  <%= render 'shared/comic_form' %>
-</div>
