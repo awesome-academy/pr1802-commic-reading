@@ -1,6 +1,10 @@
 <% provide :title, t('.comics') %>
 
 <h1><%= @category&.name || t('.comics') %></h1>
-<ul>
-  <%= render @comics %>
-</ul>
+<% if @comics.present? %>
+  <div class='content'>
+    <%= render @comics %>
+  </div>
+<% else %>
+  <p><%= t '.error' %></p>
+<% end %>

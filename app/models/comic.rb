@@ -16,6 +16,10 @@ class Comic < ApplicationRecord
   validates :author_id, presence: true
   validate  :picture_size
 
+  scope :search, -> (params_search) { where("title LIKE ?", "%#{params_search}%")}
+  
+  scope :rate_dsc, ->{order average_ratings: :desc}
+
   private
   def picture_size
     if picture.size > 5.megabytes

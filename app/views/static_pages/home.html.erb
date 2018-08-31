@@ -1,3 +1,5 @@
 <div class='content'>
   <h1><%= t '.welcome' %></h1>
+  <h2><%= t '.top' %></h2>
+  <%= render partial: 'comics/comic', collection: @comics %>
 </div>

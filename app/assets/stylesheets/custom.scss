@@ -3,9 +3,12 @@
 $gray-medium-light: #eaeaea;
 .navbar {
   background-image: url("bg6.jpg");
-  height: 110px;
+  height: 130px;
   margin-top: -70px;
   padding-top: 10px;
+}
+.form-search {
+  margin-top: 20px;
 }
 footer {
   padding-top: 20px;
@@ -154,4 +157,13 @@ input {
 .row {
   width: 1000px;
   margin: 0 auto;
+}
+.rule {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 700px;
+  margin-right: 700px;
+  border-style: inset;
+  border-width: 1px;
 }
