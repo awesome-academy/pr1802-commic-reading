@@ -12,6 +12,8 @@ class ComicsController < ApplicationController
     @comic = Comic.find params[:id]
     @author = @comic.author
     @category = @comic.category_ids
+    return unless logged_in?
+    @rate = current_user.rates.find_or_initialize_by comic_id: @comic.id
   end
 
   def create

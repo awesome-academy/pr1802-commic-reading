@@ -43,8 +43,8 @@ en:
     new:
       create: 'Create comic'
     show:
-      edit: 'edit'
-      delete: 'delete'
+      edit: 'Edit'
+      delete: 'Delete'
       sure: 'You sure?'
       title: 'Title:'
       intro: 'Introduce:'
@@ -54,6 +54,9 @@ en:
       follow: 'Follow'
     unfollow:  
       unfollow: 'Unfollow'
+    rate_form:
+      select: 'Select One'
+      rate: 'Rate'
 
   layouts:
     footer: 
@@ -93,11 +96,16 @@ en:
       new_title: 'Compose new title...'
       new_content: 'Compose new content...'
       post: 'Post'
+      select: 'Select Categories'
     user_stats:
       following: 'following'
     comic_stats:
       followers: 'followers'
-      log_in: 'Log in to follow'
+      log_in: 'Log in to follow and rate this comic'
+      rating: 'Rating: %{rate}/5'
+      rate: 'Rate this comic:'
+      rate_again: 'Wanna rate again?'
+      count_rate: '( %{count} rates )'
 
   users:
     new:

@@ -8,16 +8,16 @@
   <div class='field'>
   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
   </div>
-  <div class="field">
-    <%= f.label "Select Categories" %><br />
+  <div class='field'>
+    <%= f.label t('.select') %>
     <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
-      <div class="collection-check-box">
+      <div class='collection-check-box'>
         <%= b.check_box %>
         <%= b.label %>
       </div>
     <% end %>
   </div>
-  <span class="picture">
+  <span class='picture'>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
   <%= f.submit t('.post'), class: 'btn btn-primary' %>

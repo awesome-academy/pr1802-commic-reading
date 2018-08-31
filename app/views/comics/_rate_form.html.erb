@@ -1,0 +1,4 @@
+<%= form_for [@comic, @rate] do |f| %>
+  <%= f.select :rate, options_for_select_rating, {prompt: t('.select')}, selected: @rate.rate.to_s %>
+  <%= f.submit t('.rate') %>
+<% end %>
