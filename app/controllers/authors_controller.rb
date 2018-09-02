@@ -1,4 +1,6 @@
 class AuthorsController < ApplicationController
+  before_action :admin_user, only: [:create, :destroy, :edit, :update]
+
   def show
     @author = Author.find params[:id]
     @comics = @author.comics

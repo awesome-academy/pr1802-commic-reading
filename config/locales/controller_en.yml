@@ -31,6 +31,9 @@ en:
 
   users:
     welcome: 'Welcome to the Comics Reading!'
+    changed: 'Your profile changed!'
+    require: 'Please log in!'
+    delete_success: 'User deleted!'
 
   rates:
     create:

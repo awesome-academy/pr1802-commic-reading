@@ -77,6 +77,8 @@ en:
       log_in: 'Log in'
       sign_up: 'Sign up'
       category: 'Category'
+      users: 'Users'
+      all_comics: 'All Comics'
 
   sessions:
     new:
@@ -119,9 +121,16 @@ en:
       name: 'Name'
       email: 'Email'
       password: 'Password'
-    show_follow:
-      following: 'Following'
+    followed_comics:
+      following: 'Following Comics'
       view: 'View my profile'
+    edit:
+      edit: 'Edit your profile'
+      save: 'Save changes'
+      update: 'Update your profile'
+      change: 'Change'
+    index:
+      all: 'All users'
 
   helper:
     application:

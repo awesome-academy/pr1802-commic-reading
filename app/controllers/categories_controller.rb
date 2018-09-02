@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :admin_user, only: [:create, :destroy, :edit, :update]
+
   def show
     @category = Category.find params[:id]
     @comics = @category.comics
