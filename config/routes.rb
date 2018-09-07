@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy, :index]
   end
   resources :comics do
+    resources :chapters
     resources :rates, only: [:create, :update]
   end
   resources :authors
+  resources :chapter_attachments
 end

@@ -9,7 +9,7 @@ class RatesController < ApplicationController
       redirect_to comic_path @rate.comic.id
     else
       flash[:alert] = t '.fail'
-      render "comics/show"
+      render 'comics/show'
     end
   end
 
@@ -19,7 +19,7 @@ class RatesController < ApplicationController
       redirect_to comic_path @rate.comic.id
     else
       flash[:alert] = t '.fail'
-      render "comics/show"
+      render 'comics/show'
     end
   end
 

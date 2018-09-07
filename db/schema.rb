@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180902192545) do
+ActiveRecord::Schema.define(version: 20180905114953) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20180902192545) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chapter_attachments", force: :cascade do |t|
+    t.integer "chapter_id"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,13 +93,6 @@ ActiveRecord::Schema.define(version: 20180902192545) do
     t.index ["comic_id"], name: "index_rates_on_comic_id"
     t.index ["user_id", "comic_id"], name: "index_rates_on_user_id_and_comic_id", unique: true
     t.index ["user_id"], name: "index_rates_on_user_id"
-  end
-
-  create_table "searches", force: :cascade do |t|
-    t.string "keywords"
-    t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,17 @@
+<%= form_for [@comic, @chapter], :html => { :multipart => true } do |f| %>
+  <div class='field'>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= f.fields_for :chapter_attachments do |chapter_attachment| %>
+    <div class='field'>
+      <%= chapter_attachment.label :picture %><br>
+      <%= image_tag chapter_attachment.object.picture_url %>
+      <%= chapter_attachment.file_field :picture %>
+    </div>
+  <% end %>
+  <div class='actions'>
+    <%= f.submit %>
+  </div>
+<% end %>

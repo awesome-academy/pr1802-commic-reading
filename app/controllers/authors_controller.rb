@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  before_action :admin_user, only: [:create, :destroy, :edit, :update]
+  before_action :admin_user, except: [:index, :new, :show]
 
   def show
     @author = Author.find params[:id]

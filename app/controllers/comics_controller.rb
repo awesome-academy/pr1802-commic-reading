@@ -1,5 +1,5 @@
 class ComicsController < ApplicationController
-  before_action :admin_user, only: [:create, :destroy, :edit, :update]
+  before_action :admin_user, except: [:index, :new, :show]
 
   def index
     if params[:search]
@@ -19,6 +19,7 @@ class ComicsController < ApplicationController
     @comic = Comic.find params[:id]
     @author = @comic.author
     @category = @comic.category_ids
+    @chapters = @comic.chapters
     return unless logged_in?
     @rate = current_user.rates.find_or_initialize_by comic_id: @comic.id
   end
