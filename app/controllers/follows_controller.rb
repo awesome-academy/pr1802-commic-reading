@@ -15,6 +15,6 @@ class FollowsController < ApplicationController
   def index
     @user = current_user
     @comics = @user.followed_comics
-    render 'users/show_follows'
+    render 'users/followed_comics'
   end
 end

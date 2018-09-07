@@ -1,5 +1,7 @@
 <li id='author-<%= author.id %>'>
   <span><%= link_to author.name, author %></span>
-  | <%= link_to t('.edit'), edit_author_path(author) %>
-  | <%= link_to t('.delete'), author, method: :delete, data: { confirm: t('.sure') } %>
+  <% if logged_in? && current_user.admin? %>
+    | <%= link_to t('.edit'), edit_author_path(author) %>
+    | <%= link_to t('.delete'), author, method: :delete, data: { confirm: t('.sure') } %>
+  <% end %>
 </li>

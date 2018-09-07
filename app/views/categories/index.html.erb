@@ -5,5 +5,7 @@
   <%= render @categories %>
 </ul>
 <div>
-  <%= render 'shared/category_form' %>
+  <% if logged_in? && current_user.admin? %>
+    <%= render 'shared/category_form' %>
+  <% end %>
 </div>

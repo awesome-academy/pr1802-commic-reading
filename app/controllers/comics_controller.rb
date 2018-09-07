@@ -1,4 +1,6 @@
 class ComicsController < ApplicationController
+  before_action :admin_user, only: [:create, :destroy, :edit, :update]
+
   def index
     if params[:search]
       @comics = Comic.search params[:search]
