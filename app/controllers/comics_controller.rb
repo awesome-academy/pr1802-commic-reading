@@ -1,7 +1,12 @@
 class ComicsController < ApplicationController
   def index
-    @category = Category.find_by_id params[:category_id]
-    @comics = @category&.comics || Comic.all
+    if params[:search]
+      @comics = Comic.search params[:search]
+    else
+      @category = Category.find_by_id params[:category_id]
+      @comics = @category&.comics || Comic.all
+    end
+    @comics = @comics.rate_dsc
   end
 
   def new
@@ -50,6 +55,6 @@ class ComicsController < ApplicationController
 
   private
   def comic_params
-    params.require(:comic).permit :title, :content, :author_id, :picture, category_ids: []
+    params.require(:comic).permit :title, :content, :author_id, :picture, :search, category_ids: []
   end
 end

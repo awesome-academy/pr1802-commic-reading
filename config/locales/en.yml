@@ -2,6 +2,7 @@ en:
   static_pages:
     home:
       welcome: 'Welcome to Reading Comic Online!'
+      top: 'Top Ratings'
 
   authors:
     index:
@@ -32,6 +33,7 @@ en:
   comics:
     index:
       comics: 'Comics'
+      error: 'There are no comics.'
     edit:
       edit_comic: 'Editing Comic'
       show: 'Show'
@@ -40,6 +42,8 @@ en:
       edit: 'edit'
       delete: 'delete'
       sure: 'You sure?'
+      author: 'Author:'
+      intro: 'Introduction:'
     new:
       create: 'Create comic'
     show:
