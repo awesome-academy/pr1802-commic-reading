@@ -54,6 +54,8 @@ en:
       intro: 'Introduce:'
       author: 'Author:'
       category: 'Category:'
+      create: 'Create new chapter'
+      list: 'List of chapters'
     follow:
       follow: 'Follow'
     unfollow:  
@@ -135,3 +137,17 @@ en:
   helper:
     application:
       read: 'Reading Comic'
+
+  chapters:
+    index:
+      delete: 'Delete'
+      sure: 'You sure?'
+    show:
+      delete: 'Delete'
+      edit_image: 'Edit image'
+      edit: 'Update this chapter'
+      back: 'Back to comic'
+    new:
+      create: 'Create new chapter'
+    edit:
+      update_chapter: 'Update chapter'

@@ -1,0 +1,2 @@
+module ChapterAttachmentsHelper
+end

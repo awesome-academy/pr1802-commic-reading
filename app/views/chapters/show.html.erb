@@ -1,0 +1,22 @@
+<% provide :title, @chapter.title %>
+
+<h1>
+  <strong><%= @chapter.title %></strong>
+</h1>
+<% @chapter_attachments.each do |chapter_attachment| %>
+  <li>
+    <%= image_tag chapter_attachment.picture_url %>
+    <% if logged_in? && current_user.admin? %>
+      <%= link_to t('.edit_image'), edit_chapter_attachment_path(chapter_attachment) %> |
+      <%= link_to t('.delete'), chapter_attachment_path(chapter_attachment), method: :delete %>
+    <% end %>
+  </li>
+<% end %></br>
+<div>
+  <% if logged_in? && current_user.admin? %>
+    <%= link_to t('.edit'), edit_comic_chapter_path(@comic, @chapter) %>
+  <% end %>
+</div>
+<div>
+<%= link_to t('.back'), @comic %>
+</div>
