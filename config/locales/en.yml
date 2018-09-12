@@ -114,6 +114,7 @@ en:
       rate: 'Rate this comic:'
       rate_again: 'Wanna rate again?'
       count_rate: '( %{count} rates )'
+      status: 'Status:'
 
   users:
     new:
@@ -133,6 +134,8 @@ en:
       change: 'Change'
     index:
       all: 'All users'
+      delete: 'Delete'
+      sure: 'You sure?'
 
   helper:
     application:

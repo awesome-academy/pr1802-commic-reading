@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180905114953) do
+ActiveRecord::Schema.define(version: 20180911172318) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180905114953) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.string "average_ratings"
+    t.integer "status", default: 0
     t.index ["author_id"], name: "index_comics_on_author_id"
     t.index ["user_id", "created_at"], name: "index_comics_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_comics_on_user_id"
