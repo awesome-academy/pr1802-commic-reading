@@ -43,7 +43,7 @@ class ComicsController < ApplicationController
     @comic = Comic.find params[:id]
     if @comic.update_attributes comic_params
       flash[:success] = t '.success'
-      redirect_to comics_path
+      redirect_to comic_path
     else
       render :edit
     end
@@ -58,6 +58,7 @@ class ComicsController < ApplicationController
 
   private
   def comic_params
-    params.require(:comic).permit :title, :content, :author_id, :picture, :search, category_ids: []
+    params.require(:comic).permit :title,
+      :content, :author_id, :picture, :search, :status, category_ids: []
   end
 end

@@ -9,6 +9,7 @@ class Comic < ApplicationRecord
   has_many :chapters
   has_many :comic_categories
   has_many :categories, through: :comic_categories
+  enum status: [ :ongoing, :completed ]
 
   validates :user_id, presence: true
   validates :title, presence: true
@@ -16,7 +17,7 @@ class Comic < ApplicationRecord
   validates :author_id, presence: true
   validate  :picture_size
 
-  scope :search, -> (params_search) { where("title LIKE ?", "%#{params_search}%")}
+  scope :search, -> (params_search) { where('title LIKE ?', '%#{params_search}%')}
   
   scope :rate_dsc, ->{order average_ratings: :desc}
 

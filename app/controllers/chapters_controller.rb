@@ -20,7 +20,7 @@ class ChaptersController < ApplicationController
     @chapter = current_user.chapters.build chapter_params.merge(comic_id: @comic.id)
     if @chapter.save
       params[:chapter_attachments][:picture].each do |a|
-        @chapter_attachment = @chapter.chapter_attachments.create!(picture: a)
+        @chapter_attachment = @chapter.chapter_attachments.create! picture: a
       end
       flash[:success] = t '.success'
       redirect_to comic_chapter_path @comic, @chapter

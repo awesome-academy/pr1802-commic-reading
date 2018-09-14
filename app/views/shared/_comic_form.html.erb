@@ -6,7 +6,7 @@
     <%= f.text_area :content, placeholder: t('.new_content') %>
   </div>
   <div class='field'>
-  <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+    <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
   </div>
   <div class='field'>
     <%= f.label t('.select') %>
@@ -16,6 +16,10 @@
         <%= b.label %>
       </div>
     <% end %>
+  </div>
+  <div>
+    <%= f.label :status %>
+    <%= f.collection_radio_buttons :status, Comic.statuses, :first, :first %>
   </div>
   <span class='picture'>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
