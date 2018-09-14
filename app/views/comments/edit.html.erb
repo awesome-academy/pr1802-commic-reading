@@ -1,0 +1,12 @@
+<% provide :title, t('.edit_comment') %>
+<h1><%= t '.edit_comment' %></h1>
+
+  <%= form_for [@comic, @chapter, @comment], method: :patch do |f| %>
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit t('.update') %>
+  </div>
+<% end %>

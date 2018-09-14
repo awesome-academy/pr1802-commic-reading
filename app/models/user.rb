@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :follows, dependent: :destroy
   has_many :followed_comics, through: :follows, source: :comic,
     dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :chapters
   has_many :rates
   has_many :rated_comics, through: :rates, source: :comic,
