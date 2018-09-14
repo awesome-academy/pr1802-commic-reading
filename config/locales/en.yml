@@ -190,3 +190,8 @@ en:
     edit:
       edit_comment: 'Edit your comment'
       update: 'Update Comment'
+    create:
+      comments: Comments ( %{count} )
+    destroy:
+      comments: Comments ( %{count} )
+

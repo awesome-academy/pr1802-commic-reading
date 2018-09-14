@@ -20,14 +20,16 @@
 <div>
   <%= link_to t('.back'), @comic %>
 </div>
-<h3><%= t '.comments', count: @chapter.comments.count %></h3>
-  <% if logged_in? %>
-    <li class='list-group-item'>
-      <%= render 'comments/form' %>
-    </li>
-  <% else %>
-    <li class='list-group-item list-group-item-warning'>
-      <%= link_to t('.login'), login_path, remote: true %><div id='myModal'></div>
-    </li>
-  <% end %>
-  <%= render 'comments/comment' %>
+<h3 id='comments'><%= t '.comments', count: @chapter.comments.count %></h3>
+<% if logged_in? %>
+  <li class='list-group-item'>
+    <%= render 'comments/form', comment: @comment %>
+  </li>
+<% else %>
+  <li class='list-group-item list-group-item-warning'>
+    <%= link_to t('.login'), login_path, remote: true %><div id='myModal'></div>
+  </li>
+<% end %>
+<ul class='list-group'>
+  <%= render @comments %>
+</ul>

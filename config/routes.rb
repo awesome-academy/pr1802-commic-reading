@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :authors
   resources :chapter_attachments
+  resources :comments
 end
