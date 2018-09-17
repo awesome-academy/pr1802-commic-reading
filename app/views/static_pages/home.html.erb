@@ -1,5 +1,11 @@
 <div class='content'>
   <h1><%= t '.welcome' %></h1>
-  <h2><%= t '.top' %></h2>
-  <%= render partial: 'comics/comic', collection: @comics %>
+  <h3><%= t '.new' %></h3>
+    <%= render partial: 'comics/comic', collection: @comics.most_recent.limit(5) %>
+  <h3><%= t '.updated'%></h3>
+    <%= render partial: 'comics/comic', collection: @comics.updated.limit(5) %>
+  <h3><%= t '.completed' %></h3>
+    <%= render partial: 'comics/comic', collection: @comics.completed.limit(5) %>
+  <h3><%= t '.ongoing' %></h3>
+    <%= render partial: 'comics/comic', collection: @comics.ongoing.limit(5) %>
 </div>

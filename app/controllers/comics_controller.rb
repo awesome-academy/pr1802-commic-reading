@@ -8,7 +8,7 @@ class ComicsController < ApplicationController
       @category = Category.find_by_id params[:category_id]
       @comics = @category&.comics || Comic.all
     end
-    @comics = @comics.rate_dsc
+    @comics = @comics.send params[:scope] if params[:scope]
   end
 
   def new

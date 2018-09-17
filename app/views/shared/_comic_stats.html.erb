@@ -1,6 +1,6 @@
 <div>
   <%= t '.status' %>
-  <%= @comic.status.capitalize %>
+  <%= link_to @comic.status.capitalize, comics_path(scope: @comic.status) %>
 </div>
 <div class='stats'>
   <strong id='follows' class='stat'>

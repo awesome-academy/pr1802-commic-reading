@@ -2,7 +2,10 @@ en:
   static_pages:
     home:
       welcome: 'Welcome to Reading Comic Online!'
-      top: 'Top Ratings'
+      new_comics: 'New comics'
+      updated: 'Recently updated'
+      completed: 'Completed comics'
+      ongoing: 'On-going comics'
 
   authors:
     index:
@@ -78,9 +81,15 @@ en:
       log_out: 'Log out'
       log_in: 'Log in'
       sign_up: 'Sign up'
-      category: 'Category'
+      category: 'Categories'
       users: 'Users'
-      all_comics: 'All Comics'
+      all_comics: 'Comics'
+      filter: 'Filter'
+      top: 'Top rating'
+      new: 'New comics'
+      updated: 'New updated'
+      ongoing: 'On-going'
+      completed: 'Completed'
 
   sessions:
     new:
