@@ -9,6 +9,8 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter_attachments = @chapter.chapter_attachments.all
+    @comments = @chapter.comments.order_created_desc
+    @comment = @chapter.comments.build(user_id: current_user.id) if logged_in?
   end
 
   def new

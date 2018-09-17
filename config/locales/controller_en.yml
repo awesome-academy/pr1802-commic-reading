@@ -58,3 +58,14 @@ en:
       success: 'Image updated!'
     destroy:
       success: 'Image deleted!'
+
+  comments:
+    create:
+      success: 'Comment created!'
+    update:
+      success: 'Comment edited!'
+    destroy:
+      success: 'Comment deleted!'
+
+  applications:
+    please: 'Please log in.'

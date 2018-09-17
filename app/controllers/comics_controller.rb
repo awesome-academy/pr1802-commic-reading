@@ -28,10 +28,10 @@ class ComicsController < ApplicationController
     @comic = current_user.comics.new comic_params
     if @comic.save
       flash[:success] = t '.success'
-      redirect_to comics_path
+      redirect_to @comic
     else
       flash[:danger] = t '.fail'
-      redirect_to comics_path
+      render :new
     end
   end
 

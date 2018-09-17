@@ -150,7 +150,21 @@ en:
       edit_image: 'Edit image'
       edit: 'Update this chapter'
       back: 'Back to comic'
+      comments: 'Comments ( %{count} )'
+      login: 'Login to comment!'
     new:
       create: 'Create new chapter'
     edit:
       update_chapter: 'Update chapter'
+
+  comments:
+    comment:
+      commented_ago: 'Commented %{time} ago.'
+      edit: 'Edit'
+      delete: 'Delete'
+      confirm: 'Delete this comment?'
+    form:
+      add: 'Add a Comment...'
+    edit:
+      edit_comment: 'Edit your comment'
+      update: 'Update Comment'
