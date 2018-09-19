@@ -13,10 +13,22 @@
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><%= t('.category') %></a>
           <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
             <% Category.all.each do |category| %>
-              <%= link_to category.name, category_comics_path(category), class: 'dropdown-item' %>
+              <%= link_to category.name.capitalize, category_comics_path(category), class: 'dropdown-item' %>
             <% end %>
           </div>
         </li>
+        <li class='dropdown'>
+        <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+          <%= t '.filter' %>
+          <b class='caret'></b>
+        </a>
+        <ul class='dropdown-menu'>
+          <li><%= link_to t('.top'), comics_path(scope: 'rate_dsc') %></li>
+          <li><%= link_to t('.new'), comics_path(scope: 'most_recent') %></li>
+          <li><%= link_to t('.updated'), comics_path(scope: 'updated') %></li>
+          <li><%= link_to t('.ongoing'), comics_path(scope: 'ongoing') %></li>
+          <li><%= link_to t('.completed'), comics_path(scope: 'completed') %></li>
+        </ul>
         <li><%= link_to t('.feedback'), '#' %></li>
       </ul>
       <ul class='nav navbar-nav navbar-right'>
