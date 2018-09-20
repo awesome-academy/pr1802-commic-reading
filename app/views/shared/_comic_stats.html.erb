@@ -22,6 +22,6 @@
     <%= current_user.rating?(@comic) ? t('.rate_again') : t('.rate') %>
     <%= render 'comics/rate_form' %>
   <% else %>
-    <%= link_to t('.log_in'), login_path %>
+    <%= link_to t('.log_in'), login_path, remote: true %><div id='myModal'></div>
   <% end %>
 </div>

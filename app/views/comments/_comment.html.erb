@@ -8,16 +8,18 @@
         <%= t '.commented_ago', time: time_ago_in_words(comment.created_at) %>
       </span>
       <% if current_user? comment.user %> 
-        <%= link_to t('.edit'), edit_comic_chapter_comment_path(comment.chapter.comic, comment.chapter, comment) %> | 
+        <%= link_to t('.edit'), edit_comic_chapter_comment_path(comment.chapter.comic, comment.chapter, comment) %><br>
         <%= link_to t('.delete'),
           comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
           method: :delete,
           data: { confirm: t('.confirm') } %>
       <% elsif logged_in? && current_user.admin? %>
-        <%= link_to t('.delete'),
-          comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
-          method: :delete,
-          data: { confirm: t('.confirm') }%>
+        <div>
+          <%= link_to t('.delete'),
+            comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
+            method: :delete,
+            data: { confirm: t('.confirm') }%>
+        </div>
       <% end %>
     </li>
   <% end %>

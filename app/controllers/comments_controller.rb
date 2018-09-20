@@ -12,18 +12,23 @@ class CommentsController < ApplicationController
   def create
     @comment = @chapter.comments.build comment_params
       .merge(user_id: current_user.id)
-    respond_to do |format|
       if @comment.save
-        format.html do 
-          redirect_to comic_chapter_path(@comic, @chapter),
-          notice: t('.success')
+        respond_to do |format|
+          format.html do
+            redirect_to comic_chapter_path(@comic, @chapter)
+            flash[:success] = t '.success'
+          end
+          format.js
         end
-        format.js
       else
-        format.html { render :new }
-        format.js
+        respond_to do |format|
+          format.html do
+            redirect_to comic_chapter_path(@comic, @chapter)
+            flash[:danger] = t '.failed'
+          end
+          format.js
+        end
       end
-    end
   end
 
   def edit
