@@ -62,6 +62,7 @@ en:
   comments:
     create:
       success: 'Comment created!'
+      failed: 'Failed to created comment!'
     update:
       success: 'Comment edited!'
     destroy:

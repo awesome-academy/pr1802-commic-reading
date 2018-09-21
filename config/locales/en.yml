@@ -2,7 +2,7 @@ en:
   static_pages:
     home:
       welcome: 'Welcome to Reading Comic Online!'
-      new_comics: 'New comics'
+      new: 'New comics'
       updated: 'Recently updated'
       completed: 'Completed comics'
       ongoing: 'On-going comics'
@@ -99,6 +99,15 @@ en:
       sign_up: 'Sign up now!'
       email: 'Email'
       password: 'Password'
+    new_form:
+      log_in: 'Log in'
+      remember_me: 'Remember me on this computer'
+      new_user: 'New user?'
+      sign_up: 'Sign up now!'
+      email: 'Email'
+      password: 'Password'
+    modal:
+      log_in: 'Log in'
 
   shared:
     error_messages:
@@ -145,6 +154,10 @@ en:
       all: 'All users'
       delete: 'Delete'
       sure: 'You sure?'
+    form:
+      sign_up: 'Sign up'
+    modal:
+      sign_up: 'Sign up'
 
   helper:
     application:

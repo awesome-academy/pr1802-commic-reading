@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -7,7 +11,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+      redirect_to request.referrer
     else
       flash[:danger] = t '.invalid_email'
       render 'new'
