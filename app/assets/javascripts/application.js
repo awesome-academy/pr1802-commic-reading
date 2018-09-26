@@ -12,9 +12,11 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
 $(document).ready(function() {
   $('#comic_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

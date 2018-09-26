@@ -1,11 +1,14 @@
 <%= form_for(@comic) do |f| %>
   <div class='field'>
+    <%= f.label :title %>
     <%= f.text_field :title, placeholder: t('.new_title') %>
   </div>
   <div class='field'>
-    <%= f.text_area :content, placeholder: t('.new_content') %>
+    <%= f.label :content, t('.introduction') %>
+    <%= f.cktext_area :content, rows: 10 %>
   </div>
   <div class='field'>
+    <%= f.label t('.author') %>
     <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
   </div>
   <div class='field'>
@@ -19,9 +22,10 @@
   </div>
   <div>
     <%= f.label :status %>
-    <%= f.collection_radio_buttons :status, Comic.statuses, :first, :first %>
+    <%= f.collection_radio_buttons :status, Comic.statuses.map{|key, value| [t(".#{key}"), key]}, :last, :first %>
   </div>
   <span class='picture'>
+    <%= f.label :picture, t('.avatar') %>
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
   <%= f.submit t('.post'), class: 'btn btn-primary' %>
