@@ -5,7 +5,7 @@ class Chapter < ApplicationRecord
   has_many :chapter_attachments
   accepts_nested_attributes_for :chapter_attachments
 
-  scope :title_asc, -> { order title: :asc }
+  scope :title_asc,->{order title: :asc}
 
   after_save :update_comic
   def update_comic

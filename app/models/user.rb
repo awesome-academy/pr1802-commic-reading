@@ -61,4 +61,13 @@ class User < ApplicationRecord
   def rating? comic
     comic.raters.find_by(id: id).present?
   end
+
+  def self.to_csv option = {}
+    CSV.generate(option) do |csv|
+      csv << column_names
+      all.each do |user|
+        csv << user.attributes.values_at(*column_names) 
+      end
+    end
+  end
 end

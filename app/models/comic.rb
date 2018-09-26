@@ -17,15 +17,15 @@ class Comic < ApplicationRecord
   validates :author_id, presence: true
   validate  :picture_size
 
-  scope :search, ->(params_search) { where('title LIKE ?', "%#{params_search}%")}
+  scope :search,->(params_search){where('title LIKE ?', "%#{params_search}%")}
   
-  scope :rate_dsc, -> {order average_ratings: :desc}
+  scope :rate_dsc,->{order average_ratings: :desc}
 
-  scope :most_recent, -> {order created_at: :desc}
+  scope :most_recent,->{order created_at: :desc}
 
-  scope :updated, -> {order updated_at: :desc}
+  scope :updated,->{order updated_at: :desc}
 
-  scope :order_by_title, -> { order title: :asc }
+  scope :title_asc,->{order title: :asc}
 
   private
   def picture_size

@@ -162,6 +162,9 @@ en:
       all: 'All users'
       delete: 'Delete'
       sure: 'You sure?'
+      download: 'Download users list:'
+      export_csv: 'CSV'
+      export_xls: 'Excel'
     form:
       sign_up: 'Sign up'
     modal:
