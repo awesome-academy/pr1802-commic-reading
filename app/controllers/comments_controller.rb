@@ -12,49 +12,35 @@ class CommentsController < ApplicationController
   def create
     @comment = @chapter.comments.build comment_params
       .merge(user_id: current_user.id)
-      if @comment.save
-        respond_to do |format|
-          format.html do
-            redirect_to comic_chapter_path(@comic, @chapter)
-            flash[:success] = t '.success'
-          end
-          format.js
-        end
-      else
-        respond_to do |format|
-          format.html do
-            redirect_to comic_chapter_path(@comic, @chapter)
-            flash[:danger] = t '.failed'
-          end
-          format.js
-        end
+    if @comment.save
+      respond_to do |format|
+        format.js
       end
-  end
-
-  def edit
+    else
+      redirect_to comic_chapter_path @comic, @chapter
+    end
   end
 
   def update
     if @comment.update_attributes comment_params
-      flash[:success] = t '.success'
-      redirect_to comic_chapter_path @comic, @chapter
+      respond_to do |format|
+        format.js
+      end
     else
-      render :edit
+      redirect_to comic_chapter_path @comic, @chapter
     end
   end
 
   def destroy
     @comment.destroy
-    flash[:success] = t '.success'
-    redirect_to comic_chapter_path @comic, @chapter
-  end
-
-  def show
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
   def comment_params
-    params.require(:comment).permit :content
+    params.require(:comment).permit :content, :user_id, :chapter_id, :comic_id
   end
 
   def find_comic

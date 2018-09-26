@@ -1,0 +1,2 @@
+$('#comment-<%= @comment.id %>').remove();
+$('#comments').html('<%= t '.comments', count: @chapter.comments.count %>');

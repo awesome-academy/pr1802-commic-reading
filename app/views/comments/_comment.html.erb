@@ -1,26 +1,25 @@
-<ul class='list-group'>
-  <% @comments.each do |comment| %>
-    <li class='list-group-item'>
-      <%= link_to comment.user.name, user_path(comment.user) %>
-      &nbsp;&gt;&nbsp;
-      <%= comment.content %><br>
-      <span class='timestamp'>
-        <%= t '.commented_ago', time: time_ago_in_words(comment.created_at) %>
-      </span>
-      <% if current_user? comment.user %> 
-        <%= link_to t('.edit'), edit_comic_chapter_comment_path(comment.chapter.comic, comment.chapter, comment) %><br>
-        <%= link_to t('.delete'),
-          comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
-          method: :delete,
-          data: { confirm: t('.confirm') } %>
-      <% elsif logged_in? && current_user.admin? %>
-        <div>
-          <%= link_to t('.delete'),
-            comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
-            method: :delete,
-            data: { confirm: t('.confirm') }%>
-        </div>
-      <% end %>
-    </li>
+<li class='list-group-item' id='comment-<%= comment.id %>'>
+  <%= link_to comment.user.name, user_path(comment.user) %>
+  &nbsp;&gt;&nbsp;
+  <%= comment.content %><br>
+  <span class='timestamp'>
+    <%= t '.commented_ago', time: time_ago_in_words(comment.created_at) %>
+  </span>
+  <% if current_user? comment.user %> 
+    <%= link_to t('.edit'), "#editForm#{comment.id}",
+          data: {toggle: 'collapse'},
+          aria: {expanded: 'false', controls: "#editForm#{comment.id}"} %> | 
+    <%= link_to t('.delete'),
+      comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
+      method: :delete, remote: true,
+      data: { confirm: t('.confirm') } %>
+    <div class='collapse' id=<%="editForm#{comment.id}"%>>
+      <%= render 'comments/form', comment: comment %>
+    </div>
+  <% elsif logged_in? && current_user.admin? %>
+    <%= link_to t('.delete'),
+      comic_chapter_comment_url(comment.chapter.comic, comment.chapter, comment),
+      method: :delete, remote: true,
+      data: { confirm: t('.confirm') }%>
   <% end %>
-</ul>
+</li>

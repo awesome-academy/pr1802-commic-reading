@@ -1,3 +1,5 @@
-<%= form_for([current_user, current_user.follows.find_by(comic_id: @comic.id)], html: { method: :delete }) do |f| %>
-  <%= f.submit t('.unfollow')%>
+<%= form_for([current_user, current_user.follows.find_by(comic_id: @comic.id)],
+      html: { method: :delete },
+      remote: true) do |f| %>
+  <%= f.submit t('.unfollow'), class: 'btn' %>
 <% end %>

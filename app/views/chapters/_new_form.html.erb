@@ -7,7 +7,7 @@
   <%= f.fields_for :chapter_attachments do |chapter_attachment| %>
     <div class='field'>
       <%= chapter_attachment.label :picture %><br>
-      <%= chapter_attachment.file_field :picture, :multiple => true, name: "chapter_attachments[picture][]" %>
+      <%= chapter_attachment.file_field :picture, :multiple => true, name: 'chapter_attachments[picture][]' %>
     </div>
   <% end %>
   <div id='preview'></div>
