@@ -4,7 +4,7 @@
   </div>
   <div class='content-comic'>
     <%= t '.intro' %>
-    <%= comic.content %>
+    <%= sanitize comic.content %>
   </div>
   <div class='author'>
     <%= t '.author' %>
@@ -14,7 +14,7 @@
     <%= image_tag comic.picture.url if comic.picture? %>
   </div>
   <% if logged_in? && current_user.admin? %>
-    <%= link_to t('.delete'), comic, method: :delete, data: { confirm: t('.sure') } %> |
+    <%= link_to t('.delete'), comic, method: :delete, data: {confirm: t('.sure')} %> |
     <%= link_to t('.edit'), edit_comic_path(comic) %>
   <% end %>
 </li>

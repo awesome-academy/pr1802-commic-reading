@@ -3,7 +3,7 @@
 <h1><%= @category&.name || t('.comics') %></h1>
 <% if @comics.present? %>
   <div class='content'>
-    <%= render @comics %>
+    <%= render @comics.title_asc %>
   </div>
 <% else %>
   <p><%= t '.error' %></p>

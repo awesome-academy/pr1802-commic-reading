@@ -34,7 +34,17 @@
       <ul class='nav navbar-nav navbar-right'>
         <% if logged_in? %>
           <% if current_user.admin? %>
-            <li><%= link_to t('.users'), users_path %></li>
+            <li class='dropdown'>
+              <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+                <%= t '.admin' %>
+              <b class='caret'></b>
+              </a>
+              <ul class='dropdown-menu'>
+                <li><%= link_to t('.users'), users_path %></li>
+                <li><%= link_to t('.new_comic'), new_comic_path %></li>
+                <li><%= link_to t('.authors'), authors_path %></li>
+                <li><%= link_to t('.categories'), categories_path %></li>
+              </ul>
           <% end %>
           <li><%= link_to t('.following'), user_follows_path(current_user) %></li>
           <li class='dropdown'>

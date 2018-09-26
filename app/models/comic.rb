@@ -25,6 +25,8 @@ class Comic < ApplicationRecord
 
   scope :updated, -> {order updated_at: :desc}
 
+  scope :order_by_title, -> { order title: :asc }
+
   private
   def picture_size
     if picture.size > 5.megabytes

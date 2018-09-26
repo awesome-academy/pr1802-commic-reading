@@ -15,7 +15,7 @@
       </div>
       <div class='content-comic'>
         <%= t '.intro' %>
-        <%= @comic.content %>
+        <%= sanitize @comic.content %>
       </div>
       <div class='author'>
         <%= t '.author' %>
@@ -24,7 +24,7 @@
       <div class='category'>
         <%= t '.category' %>
         <% @comic.categories.each do |category| %>
-          <%= link_to category.name, category %> |
+          <%= link_to category.name.capitalize, category %> |
         <% end %>
       </div>
       <% if logged_in? && current_user.admin? %>

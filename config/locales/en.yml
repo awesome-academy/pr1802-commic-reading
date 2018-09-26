@@ -5,7 +5,7 @@ en:
       new: 'New comics'
       updated: 'Recently updated'
       completed: 'Completed comics'
-      ongoing: 'On-going comics'
+      ongoing: 'On going comics'
 
   authors:
     index:
@@ -66,6 +66,15 @@ en:
     rate_form:
       select: 'Select One'
       rate: 'Rate'
+    form: 
+      new_title: 'Compose new title...'
+      post: 'Post'
+      select: 'Select Categories'
+      introduction: 'Introduction'
+      avatar: 'Comic avatar'
+      ongoing: 'On going'
+      completed: 'Completed'
+      author: 'Author'
 
   layouts:
     footer: 
@@ -88,8 +97,12 @@ en:
       top: 'Top rating'
       new: 'New comics'
       updated: 'New updated'
-      ongoing: 'On-going'
+      ongoing: 'On going'
       completed: 'Completed'
+      admin: 'Admin'
+      new_comic: 'New comic'
+      authors: 'Authors'
+      categories: 'Categories'
 
   sessions:
     new:
@@ -118,11 +131,6 @@ en:
     category_form:
       new_category: 'Create new category...'
       create: 'Create'
-    comic_form: 
-      new_title: 'Compose new title...'
-      new_content: 'Compose new content...'
-      post: 'Post'
-      select: 'Select Categories'
     user_stats:
       following: 'following'
     comic_stats:
@@ -164,7 +172,7 @@ en:
       read: 'Reading Comic'
 
   chapters:
-    index:
+    chapter:
       delete: 'Delete'
       sure: 'You sure?'
     show:

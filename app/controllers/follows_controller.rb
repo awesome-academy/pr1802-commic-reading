@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
     @comic = Comic.find params[:follow][:comic_id]
     current_user.follow @comic
     respond_to do |format|
-      format.html { redirect_to @comic }
+      format.html{redirect_to @comic}
       format.js
     end
   end
@@ -13,7 +13,7 @@ class FollowsController < ApplicationController
     @comic = follow.comic
     follow.destroy
     respond_to do |format|
-      format.html { redirect_to @comic }
+      format.html{redirect_to @comic}
       format.js
     end
   end
