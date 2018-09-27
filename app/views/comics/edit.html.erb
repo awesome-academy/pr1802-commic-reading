@@ -1,6 +1,6 @@
 <% provide :title, t('.edit_comic') %>
 
 <h1><%= t '.edit_comic' %></h1>
-<%= render 'shared/comic_form', comict: @comic %>
+<%= render 'form', comic: @comic %>
 <%= link_to t('.show'), @comic %> |
 <%= link_to t('.back'), comics_path %>

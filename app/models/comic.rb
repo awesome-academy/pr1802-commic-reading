@@ -2,6 +2,7 @@ class Comic < ApplicationRecord
   belongs_to :user
   mount_uploader :picture, PictureUploader
   belongs_to :author
+  delegate :name, to: :author, prefix: true
   has_many :follows, dependent: :destroy
   has_many :followers, through: :follows, source: :user, dependent: :destroy
   has_many :rates

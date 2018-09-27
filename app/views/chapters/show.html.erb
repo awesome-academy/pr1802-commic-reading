@@ -20,6 +20,11 @@
 <div>
   <%= link_to t('.back'), @comic %>
 </div>
+<div>
+  <%= select_tag 'chapter_select', options_from_collection_for_select(@comic.chapters.title_asc, :id, :title, @chapter.id), {onchange: 'if (this.value) window.location.href=this.value;'} %>
+  <%= link_to t('.previous'), comic_chapter_path(@comic, @chapter.previous) if @chapter.previous %>
+  <%= link_to t('.next'), comic_chapter_path(@comic, @chapter.next) if @chapter.next %>
+</div>
 <h3 id='comments'><%= t '.comments', count: @chapter.comments.count %></h3>
 <% if logged_in? %>
   <li class='list-group-item'>
