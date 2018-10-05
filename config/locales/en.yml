@@ -185,6 +185,8 @@ en:
       back: 'Back to comic'
       comments: 'Comments ( %{count} )'
       login: 'Login to comment!'
+      previous: 'Previous chapter'
+      next: 'Next chapter'
     new:
       create: 'Create new chapter'
     edit:
